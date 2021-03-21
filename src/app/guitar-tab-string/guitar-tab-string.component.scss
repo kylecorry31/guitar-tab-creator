@@ -1,0 +1,42 @@
+:host {
+  position: relative;
+  display: block;
+  height: 32px;
+}
+
+.guitar-string {
+  position: absolute;
+  top: 15px;
+  width: 100%;
+  height: 1.5px;
+  background-color: black;
+  z-index: -1;
+}
+
+.guitar-frets {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  justify-self: stretch;
+  height: 100%;
+}
+
+.guitar-frets span {
+  background-color: white;
+  width: 18px;
+  text-align: center;
+}
+
+.guitar-frets input {
+  background-color: white;
+  width: 18px;
+  text-align: center;
+  height: 18px;
+  border: 1px solid #eee;
+}
+
+// .guitar-frets:not(:last-child) {
+//   border-right: 2px solid black;
+// }

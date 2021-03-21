@@ -1,0 +1,13 @@
+:host {
+  display: grid;
+  grid-template-areas:
+    "tab"
+    "bottom-bar";
+  grid-template-rows: 1fr min-content;
+}
+
+@media print {
+  .edit-toggle-btn {
+    display: none;
+  }
+}

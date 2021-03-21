@@ -1,0 +1,10 @@
+<app-guitar-tab-section
+  *ngFor="let progression of tab.progressions"
+  [progression]="progression"
+  [allowInput]="allowInput"
+></app-guitar-tab-section>
+<div class="add-section-btn-hldr">
+  <button (click)="addSection.emit()" class="add-section-btn">
+    + Add section
+  </button>
+</div>

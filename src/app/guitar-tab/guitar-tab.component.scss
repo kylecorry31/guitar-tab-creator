@@ -1,0 +1,22 @@
+:host {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 72px;
+}
+
+app-guitar-tab-section {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.add-section-btn-hldr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media print {
+  .add-section-btn-hldr {
+    display: none;
+  }
+}
