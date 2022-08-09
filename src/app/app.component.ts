@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { Tab, TabProgression, TabSection } from './tab-section';
 
 @Component({
@@ -12,13 +13,19 @@ export class AppComponent implements OnInit {
 
   tab: Tab;
 
+  constructor(private title: Title){}
+
   ngOnInit(): void {
-    this.countPerSection = +prompt('Count per section', '4') || 4;
+    this.countPerSection = +prompt('Beats per bar', '4') || 4;
     this.tab = {
       progressions: [],
     };
 
     this.addSection();
+  }
+
+  titleChanged(text: string){
+    this.title.setTitle(text);
   }
 
   addSection() {

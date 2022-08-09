@@ -6,8 +6,12 @@
   grid-template-rows: 1fr min-content;
 }
 
+#title-entry {
+  margin-right: 16px;
+}
+
 @media print {
-  .edit-toggle-btn {
+  .edit-toggle-btn, #title-entry {
     display: none;
   }
 }
