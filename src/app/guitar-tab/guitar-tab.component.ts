@@ -7,7 +7,7 @@ import {
   Output,
   SimpleChanges,
 } from '@angular/core';
-import { Tab, TabSection } from '../tab-section';
+import { Tab, TabBar } from '../tab-bar';
 
 @Component({
   selector: 'app-guitar-tab',

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { Tab, TabProgression, TabSection } from './tab-section';
+import { Tab, TabProgression, TabBar } from './tab-bar';
 
 @Component({
   selector: 'app-root',
@@ -47,5 +47,17 @@ export class AppComponent implements OnInit {
       progression[5].push(null);
     }
     this.tab.progressions.push(progression);
+
+    setTimeout(() => {
+      window.scrollTo(0, window.innerHeight)
+    });
+  }
+
+  print(){
+    this.allowInput = false;
+    setTimeout(() => {
+      window.print();
+      this.allowInput = true;
+    });
   }
 }

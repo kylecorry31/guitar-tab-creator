@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { TabProgression } from '../tab-section';
+import { TabProgression } from '../tab-bar';
 
 @Component({
   selector: 'app-guitar-tab-section',

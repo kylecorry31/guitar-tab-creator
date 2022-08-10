@@ -1,12 +1,19 @@
 :host {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  row-gap: 52px;
+  margin-left: 32px;
+  margin-right: 32px;
+}
+
+.bar {
+  height: calc(100vh / 4);
+  display: grid;
+  align-items: center;
 }
 
 app-guitar-tab-section {
-  border-left: 1px solid black;
   border-right: 1px solid black;
+  border-left: 1px solid black;
 }
 
 .add-section-btn-hldr {

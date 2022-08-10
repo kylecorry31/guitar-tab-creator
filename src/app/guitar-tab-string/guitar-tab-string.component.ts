@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { TabSection } from '../tab-section';
+import { TabBar } from '../tab-bar';
 
 @Component({
   selector: 'app-guitar-tab-string',
@@ -7,10 +7,10 @@ import { TabSection } from '../tab-section';
   styleUrls: ['./guitar-tab-string.component.scss'],
 })
 export class GuitarTabStringComponent implements OnInit {
-  @Input() tab: TabSection = [];
+  @Input() tab: TabBar = [];
   @Input() allowInput: boolean;
 
-  myTab: TabSection;
+  myTab: TabBar;
 
   constructor() {}
 

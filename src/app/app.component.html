@@ -1,7 +1,8 @@
-<div>
+<div id="toolbar">
+  <div></div>
   <input type="text" (input)="titleChanged($event.target.value)" placeholder="Title" id="title-entry" />
-  <button (click)="allowInput = !allowInput" class="edit-toggle-btn">
-    Toggle Edit Mode
+  <button mat-icon-button (click)="print()" class="edit-toggle-btn">
+    <mat-icon>print</mat-icon>
   </button>
 </div>
 <br />

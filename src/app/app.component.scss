@@ -7,11 +7,33 @@
 }
 
 #title-entry {
-  margin-right: 16px;
+  background: none;
+  outline: none;
+  border: none;
+  font-size: 24px;
+  text-align: center;
+  border-bottom: 1px solid black;
+  color: black;
+}
+
+#toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: orange;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+.edit-toggle-btn {
+  justify-self: flex-end;
 }
 
 @media print {
-  .edit-toggle-btn, #title-entry {
+  #toolbar {
     display: none;
   }
 }
