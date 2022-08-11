@@ -66,6 +66,33 @@ export class AppComponent implements OnInit {
     });
   }
 
+  export(){
+    const text = JSON.stringify(this.tab);
+    const a = document.createElement("a");
+    a.download = this.title.getTitle() + ".json";
+
+    const file = new Blob([text], {
+      type: "application/json"
+    });
+
+    a.href = window.URL.createObjectURL(file);
+    a.click();
+  }
+
+  import(){
+    const input = document.createElement("input");
+    input.type = 'file';
+    input.click();
+
+    input.addEventListener('change', () => {
+      const reader = new FileReader();
+      reader.onload = () => {
+          this.tab = JSON.parse(reader.result as string);
+      };
+      reader.readAsText(input.files[0]);
+    });
+  }
+
   print(){
     this.allowInput = false;
     setTimeout(() => {

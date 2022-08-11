@@ -1,9 +1,22 @@
 <div id="toolbar">
   <div></div>
-  <input type="text" (input)="titleChanged($event.target.value)" placeholder="Title" id="title-entry" />
-  <button mat-icon-button (click)="print()" class="edit-toggle-btn">
-    <mat-icon>print</mat-icon>
-  </button>
+  <input
+    type="text"
+    (input)="titleChanged($event.target.value)"
+    placeholder="Title"
+    id="title-entry"
+  />
+  <div id="toolbar-actions">
+    <button mat-icon-button (click)="print()" class="edit-toggle-btn">
+      <mat-icon>print</mat-icon>
+    </button>
+    <button mat-icon-button (click)="export()" class="export-btn">
+      <mat-icon>download</mat-icon>
+    </button>
+    <button mat-icon-button (click)="import()" class="import-btn">
+      <mat-icon>upload</mat-icon>
+    </button>
+  </div>
 </div>
 <br />
 <app-guitar-tab
