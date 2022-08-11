@@ -10,12 +10,9 @@ export class GuitarTabStringComponent implements OnInit {
   @Input() tab: TabBar = [];
   @Input() allowInput: boolean;
 
-  myTab: TabBar;
-
   constructor() {}
 
   ngOnInit(): void {
-    this.myTab = [...this.tab];
   }
 
   onFretChange(fretIdx: number, newValue: string | null) {
@@ -24,7 +21,7 @@ export class GuitarTabStringComponent implements OnInit {
       value = parseInt(newValue);
     }
 
-    this.myTab[fretIdx] = value;
+    this.tab[fretIdx] = value;
   }
 
   trackByFn(index, item) {

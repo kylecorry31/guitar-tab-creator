@@ -28,6 +28,19 @@ export class AppComponent implements OnInit {
     this.title.setTitle(text);
   }
 
+  copyPreviousSection(){
+    if (this.tab.progressions.length == 0){
+      return;
+    }
+    this.addSection();
+    const current = this.tab.progressions[this.tab.progressions.length - 1];
+    const previous = this.tab.progressions[this.tab.progressions.length - 2];
+    
+    for (let i = 0; i < 6; i++){
+      current[i] = [...previous[i]];
+    }
+  }
+
   addSection() {
     const progression: TabProgression = {
       0: [],
@@ -49,7 +62,7 @@ export class AppComponent implements OnInit {
     this.tab.progressions.push(progression);
 
     setTimeout(() => {
-      window.scrollTo(0, window.innerHeight)
+      window.scrollTo(0, document.body.scrollHeight)
     });
   }
 

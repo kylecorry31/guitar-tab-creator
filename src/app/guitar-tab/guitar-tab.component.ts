@@ -20,6 +20,7 @@ export class GuitarTabComponent implements OnInit, OnChanges {
   @Input() allowInput: boolean;
 
   @Output() addSection = new EventEmitter();
+  @Output() copyPreviousSection = new EventEmitter();
 
   constructor() {}
 

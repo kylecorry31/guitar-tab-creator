@@ -1,13 +1,13 @@
 <div class="guitar-string"></div>
 <div class="guitar-frets">
   <ng-container *ngIf="!allowInput">
-    <span class="m-0" *ngFor="let singleFret of myTab; trackBy: trackByFn">{{
+    <span class="m-0" *ngFor="let singleFret of tab; trackBy: trackByFn">{{
       singleFret == null ? "" : singleFret
     }}</span>
   </ng-container>
   <ng-container *ngIf="allowInput">
     <input
-      *ngFor="let singleFret of myTab; index as i; trackBy: trackByFn"
+      *ngFor="let singleFret of tab; index as i; trackBy: trackByFn"
       [value]="singleFret"
       (focusout)="onFretChange(i, $event.target?.value)"
     />
