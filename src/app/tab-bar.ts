@@ -1,4 +1,4 @@
-export type TabBar = (number | null)[];
+export type TabBar = (string | null)[];
 
 export interface Tab {
   progressions: TabProgression[];

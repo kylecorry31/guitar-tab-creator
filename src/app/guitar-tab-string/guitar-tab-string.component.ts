@@ -16,9 +16,9 @@ export class GuitarTabStringComponent implements OnInit {
   }
 
   onFretChange(fretIdx: number, newValue: string | null) {
-    let value: number | null = null;
+    let value: string | null = null;
     if (newValue != null && newValue !== '') {
-      value = parseInt(newValue);
+      value = newValue;
     }
 
     this.tab[fretIdx] = value;
