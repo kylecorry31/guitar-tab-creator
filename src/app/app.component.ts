@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Tab, TabProgression, TabBar } from './tab-bar';
 
@@ -11,12 +11,15 @@ export class AppComponent implements OnInit {
   countPerSection = 4;
   allowInput = true;
 
+  @ViewChild("beatsPerBar", { static: false })
+  beatsPerBarSelect: HTMLSelectElement;
+
   tab: Tab;
 
   constructor(private title: Title){}
 
   ngOnInit(): void {
-    this.countPerSection = +prompt('Beats per bar', '4') || 4;
+    this.countPerSection = parseInt(this.beatsPerBarSelect?.value || '4');
     this.tab = {
       progressions: [],
     };
@@ -100,4 +103,48 @@ export class AppComponent implements OnInit {
       this.allowInput = true;
     });
   }
+
+  changeBeat(value: string){
+    const backfill = confirm('Apply to existing bars?');
+    this.countPerSection = parseInt(value) || 4;
+
+    if (backfill){
+      this.tab.progressions.forEach(bar => {
+        Object.keys(bar).forEach(string => {
+          const stringBar = bar[string];
+          this.changeBeatForBar(stringBar, this.countPerSection);
+        });
+      })
+    }
+  }
+
+  private changeBeatForBar(bar: TabBar, newBeat: number) {
+    if (bar.length == newBeat){
+      return;
+    }
+
+    if (bar.length == 4 && newBeat == 8){
+      const newBar = [bar[0], null, bar[1], null, bar[2], null, bar[3], null];
+      bar.push(null);
+      bar.push(null);
+      bar.push(null);
+      bar.push(null);
+      for (let i in newBar){
+        bar[i] = newBar[i];
+      }
+    }
+
+    if (bar.length == 8 && newBeat == 4){
+      const newBar = [bar[0], bar[2], bar[4], bar[6]];
+      bar.pop();
+      bar.pop();
+      bar.pop();
+      bar.pop();
+      for (let i in newBar){
+        bar[i] = newBar[i];
+      }
+    }
+
+  }
+
 }

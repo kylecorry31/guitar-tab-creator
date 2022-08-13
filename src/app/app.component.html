@@ -1,5 +1,11 @@
 <div id="toolbar">
-  <div></div>
+  <div id="beats-per-bar">
+    <p>Beats / bar</p>
+    <select #beatsPerBar (input)="changeBeat($event.target.value)">
+      <option>4</option>
+      <option>8</option>
+    </select>
+  </div>
   <input
     type="text"
     (input)="titleChanged($event.target.value)"

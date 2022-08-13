@@ -36,6 +36,12 @@
   text-align: center;
 }
 
+#beats-per-bar {
+  text-align: center;
+  align-self: center;
+  justify-self: start;
+}
+
 @media print {
   #toolbar, .technical-add-on-instructions {
     display: none;
