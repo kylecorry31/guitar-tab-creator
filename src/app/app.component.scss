@@ -32,8 +32,12 @@
   justify-self: flex-end;
 }
 
+.technical-add-on-instructions {
+  text-align: center;
+}
+
 @media print {
-  #toolbar {
+  #toolbar, .technical-add-on-instructions {
     display: none;
   }
 }
