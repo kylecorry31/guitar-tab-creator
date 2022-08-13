@@ -44,6 +44,13 @@ export class AppComponent implements OnInit {
     }
   }
 
+  deletePreviousBar(){
+    if (this.tab.progressions.length == 0){
+      return;
+    }
+    this.tab.progressions.pop();
+  }
+
   addSection() {
     const progression: TabProgression = {
       0: [],

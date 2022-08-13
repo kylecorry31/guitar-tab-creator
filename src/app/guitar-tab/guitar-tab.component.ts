@@ -21,6 +21,7 @@ export class GuitarTabComponent implements OnInit, OnChanges {
 
   @Output() addSection = new EventEmitter();
   @Output() copyPreviousSection = new EventEmitter();
+  @Output() deletePreviousBar = new EventEmitter();
 
   constructor() {}
 
